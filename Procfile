@@ -1,1 +1,1 @@
-web: gunicorn glifeweb.wsgi
+web: gunicorn glifeweb.wsgi --log-file -
