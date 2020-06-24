@@ -139,10 +139,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+
+
 STATIC_URL = '/template/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'template/'), ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'template')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
