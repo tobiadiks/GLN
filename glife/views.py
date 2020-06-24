@@ -11,7 +11,7 @@ def Home(request):
 	gallery = Gallery.objects.all
 	latest_sermon = Sermon.objects.latest('date')
 	#latest sermon query
-	latest_sermon_slug=latest_sermon.slug
+ 	latest_sermon_slug=latest_sermon.slug
 	latest_sermon_title = latest_sermon.title
 	latest_sermon_author = latest_sermon.author
 	latest_sermon_date = latest_sermon.date
