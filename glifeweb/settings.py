@@ -14,7 +14,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import dj_database_url
 import dotenv
-import django_heroku
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -31,7 +30,6 @@ if os.path.isfile(dotenv_file):
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # Activate Django-Heroku
-
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'ww($t$8dr30+%4ew9r2g3e6fzq$jkky(=hc_p3#470r@yivzez'
