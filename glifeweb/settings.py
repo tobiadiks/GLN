@@ -32,12 +32,16 @@ if os.path.isfile(dotenv_file):
 # Activate Django-Heroku
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ww($t$8dr30+%4ew9r2g3e6fzq$jkky(=hc_p3#470r@yivzez'
+
+SECRET_KEY = os.environ.get('SECRET_KEY')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['glnation.herokuapp.com']
+ALLOWED_HOSTS = ['localhost','glnation.herokuapp.com','0.0.0.0','127.0.0.1']
 
 
 # Application definition
@@ -53,6 +57,7 @@ INSTALLED_APPS = [
     'event',
     'sermon',
     'management',
+    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
@@ -137,7 +142,9 @@ USE_TZ = True
 STATIC_URL = '/template/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'template/'), ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'template')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'] .update(db_from_env) 
