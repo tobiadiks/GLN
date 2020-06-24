@@ -30,7 +30,7 @@ if os.path.isfile(dotenv_file):
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
-# Activate Django-Heroku.
+# Activate Django-Heroku
 django_heroku​.​settings​(​locals​(​)​)
 
 # SECURITY WARNING: keep the secret key used in production secret!
