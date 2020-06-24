@@ -31,7 +31,7 @@ if os.path.isfile(dotenv_file):
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # Activate Django-Heroku
-django_heroku​.​settings​(​locals​(​)​)
+
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'ww($t$8dr30+%4ew9r2g3e6fzq$jkky(=hc_p3#470r@yivzez'
